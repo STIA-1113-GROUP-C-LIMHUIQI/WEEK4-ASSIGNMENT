@@ -1,0 +1,63 @@
+package assignment1;
+
+import java.util.Scanner; //Scanner
+
+public class Assignment {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int itemNum;
+		int qty1, qty2, qty3;
+		double price1, price2, price3;
+		float total;
+		float discount;
+		float paid; //declare variable
+		
+		Scanner scanMe = new Scanner (System.in); //Scanner
+		System.out.print("Enter the number of items: "); //print instruction
+		itemNum = scanMe.nextInt(); //scan item number
+		
+	
+			System.out.print("Enter price of first item: RM");
+			price1 = scanMe.nextDouble();
+			System.out.print("Enter quantity of first item: ");
+			qty1 = scanMe.nextInt();
+			System.out.println(); //print next line
+			
+			System.out.print("Enter price of second item: RM");
+			price2 = scanMe.nextDouble();
+			System.out.print("Enter quantity of second item: ");
+			qty2 = scanMe.nextInt();
+			System.out.println();
+			
+			System.out.print("Enter price of third item: RM");
+			price3 = scanMe.nextDouble();
+			System.out.print("Enter quantity of third item: ");
+			qty3 = scanMe.nextInt();
+			System.out.println();
+			
+		total =(float)((price1*qty1) + (price2 *qty2) + (price3*qty3)); //total formula
+		System.out.printf("Total price		: RM%.2f",total);
+		System.out.println();
+		
+		
+		if (total >100) //if else statement for discount
+		{
+			discount = (float)(total * 0.2);
+			System.out.printf("Discount received	: RM%.2f",discount);
+		}
+		
+		else
+		{
+			discount = (float)(total * 0.1);
+			System.out.printf("Discount received	: RM%.2f",discount);
+		}
+		
+		System.out.println();
+		paid = total - discount; //paid formula
+		System.out.printf("Price to be paid	: RM%.2f",paid);
+		
+	}
+
+}
